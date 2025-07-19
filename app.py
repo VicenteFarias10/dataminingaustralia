@@ -435,4 +435,6 @@ def procesar_asociacion(df_input):
         raise ValueError("Se requieren columnas Latitud y Longitud para el análisis de asociación")
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=3000)
+    import os
+    port = int(os.environ.get('PORT', 3000))
+    app.run(host='0.0.0.0', port=port)
